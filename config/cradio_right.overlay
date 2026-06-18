@@ -11,15 +11,12 @@
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
-        height = <32>;   /* Zmień na 64, jeśli Twój ekran fizycznie ma 64 piksele wysokości */
+        height = <32>;
         
-        /* Te dwie linie odpowiadają za prawidłową orientację obrazu i brak pasków */
-        segment-remap;
-        com-invdir;
-        
+        /* Zmiana: Usunięto segment-remap i com-invdir dla usunięcia pasków */
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <31>; /* Jeśli zmienisz wysokość na 64, zmień tę wartość na 63 */
+        multiplex-ratio = <31>;
         segment-offset = <0>;
         com-sequential;
         prechargep = <0x22>;
